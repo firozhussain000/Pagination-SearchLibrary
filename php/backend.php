@@ -23,9 +23,9 @@
 	    $max_page=0;
 	    $where = 1;
 		if( $input != ''){
-			$where .= ' and ( Name like "%'.$input.'%" ' ;
-			$where .= ' OR Email like "%'.$input.'%" ' ;
-			$where .= ' OR Phone like "%'.$input.'%" ' ; //Search By Phone 
+			$where .= ' and ( Name like "%'.mysqli_real_escape_string($connection_mock_chat,$input).'%" ' ;
+			$where .= ' OR Email like "%'.mysqli_real_escape_string($connection_mock_chat,$input).'%" ' ;
+			$where .= ' OR Phone like "%'.mysqli_real_escape_string($connection_mock_chat,$input).'%" ' ; //Search By Phone 
 			$where .= ')';
 		}
 	    $response_data=array();
